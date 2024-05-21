@@ -3,31 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 2, 6, 23; /* slate 950 */
-    --background-end-rgb: 15, 23, 42; /* slate 900 */
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 2, 6, 23;
+        /* slate 950 */
+        --background-end-rgb: 15, 23, 42;
+        /* slate 900 */
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom right,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom right,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+button,
+input[type="submit"],
+.button {
+    @apply bg-white hover:bg-slate-100 active:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 dark:active:bg-slate-700;
+}
+
+input {
+    @apply bg-white focus:bg-slate-100 dark:bg-slate-900 dark:focus:bg-slate-800;
 }

@@ -6,17 +6,15 @@ export default function Sidebar() {
 	const [folders, setFolders] = useState(["Inbox"]);
 
 	return (
-		<nav className="py-4 px-6 bg-slate-900">
+		<nav className="py-4 px-6 bg-slate-100 dark:bg-slate-900">
 			<h1 className="tracking-tight font-bold text-xl">
 				Yet Another Todo App
 			</h1>
 			<ol>
-				{folders.map((v) => {
+				{folders.map((v, i) => {
 					return (
-						<li className="py-2 px-4 rounded hover:bg-slate-800 active:bg-slate-700 mt-2 transition-colors cursor-pointer">
-							<button onClick={() => (window.location.href = v)}>
-								{v}
-							</button>
+						<li key={i} className="py-2 px-4 button rounded mt-2 transition-colors cursor-pointer" onClick={() => window.location.href = `/app/${v}`}>
+							{v}
 						</li>
 					);
 				})}
