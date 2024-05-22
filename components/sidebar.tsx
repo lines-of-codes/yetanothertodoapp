@@ -13,7 +13,11 @@ export default function Sidebar() {
 			<ol>
 				{folders.map((v, i) => {
 					return (
-						<li key={i} className="py-2 px-4 button rounded mt-2 transition-colors cursor-pointer" onClick={() => window.location.href = `/app/${v}`}>
+						<li
+							key={i}
+							className="py-2 px-4 button rounded mt-2"
+							onClick={() => (window.location.href = `/app/${v}`)}
+						>
 							{v}
 						</li>
 					);

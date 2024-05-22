@@ -6,12 +6,20 @@ export default function Home() {
 			<h1 className="tracking-tight text-2xl font-bold">
 				Yet Another Todo App
 			</h1>
-			<button
-				onClick={() => (window.location.href = "/login")}
-				className="rounded mt-2 p-2 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 active:dark:bg-slate-600 transition-colors"
-			>
-				Sign in/Sign up
-			</button>
+			<div className="flex gap-2">
+				<button
+					onClick={() => (window.location.href = "/signin")}
+					className="rounded mt-2 p-2"
+				>
+					Sign in
+				</button>
+				<button
+					onClick={() => (window.location.href = "/signup")}
+					className="rounded mt-2 p-2"
+				>
+					Sign up
+				</button>
+			</div>
 		</main>
 	);
 }

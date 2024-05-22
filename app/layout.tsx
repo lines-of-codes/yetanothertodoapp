@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-	title: "Yet Another Todo App - Login",
-	description: "A generic todo app login page.",
+	title: "Yet Another Todo App",
+	description: "A generic todo app.",
 };
 
 export default function RootLayout({
