@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { serverFormSubmit } from "./signup";
+import Link from "next/link";
 
 export default function Login() {
 	const submitBtn = useRef(null);
@@ -47,9 +48,15 @@ export default function Login() {
 				<input
 					type="submit"
 					value="Sign up"
-					className="mt-4 p-2"
+					className="mt-4 mb-2 p-2"
 					ref={submitBtn}
 				/>
+				<p>
+					Already have an account?{" "}
+					<Link className="" href="/signin">
+						Sign in here.
+					</Link>
+				</p>
 			</form>
 		</main>
 	);
