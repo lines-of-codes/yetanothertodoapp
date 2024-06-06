@@ -10,6 +10,8 @@
         "clean": "rm -r ./.next"
     },
     "dependencies": {
+        "@headlessui/react": "^2.0.4",
+        "lineicons-react": "^1.0.5",
         "next": "14.2.3",
         "pocketbase": "^0.21.2",
         "react": "^18.3.1",
@@ -17,7 +19,7 @@
     },
     "devDependencies": {
         "@types/node": "^20.12.12",
-        "@types/react": "^18.3.2",
+        "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "eslint": "^8.57.0",
         "eslint-config-next": "14.2.3",

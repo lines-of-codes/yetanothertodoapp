@@ -1,9 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { FolderModel } from "@/lib/data/folders";
+import { RegularCirclePlus } from "lineicons-react";
+import { useRouter } from "next/navigation";
 
-export default function Sidebar() {
-	const [folders, setFolders] = useState(["Inbox"]);
+export default function Sidebar(props: {
+	folderList: FolderModel[];
+	folder: string;
+}) {
+	const router = useRouter();
+	const listItemClass = "py-2 px-4 button rounded mt-2";
 
 	return (
 		<nav className="py-4 px-6 bg-slate-100 dark:bg-slate-900">
@@ -11,14 +17,22 @@ export default function Sidebar() {
 				Yet Another Todo App
 			</h1>
 			<ol>
-				{folders.map((v, i) => {
+				<li className={listItemClass + " flex items-center"}>
+					<RegularCirclePlus className="mr-2 text-lg fill-black dark:fill-white" />
+					Add task
+				</li>
+				{props.folderList.map((v, i) => {
 					return (
 						<li
 							key={i}
-							className="py-2 px-4 button rounded mt-2"
-							onClick={() => (window.location.href = `/app/${v}`)}
+							className={
+								props.folder === v.id
+									? listItemClass + " active"
+									: listItemClass
+							}
+							onClick={() => router.push(`/app/${v.id}`)}
 						>
-							{v}
+							{v.name}
 						</li>
 					);
 				})}

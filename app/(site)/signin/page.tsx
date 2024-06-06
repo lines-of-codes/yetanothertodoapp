@@ -8,13 +8,17 @@ export default function Login() {
 	const submitBtn = useRef(null);
 
 	async function formSubmit(formData: FormData) {
-		if (submitBtn.current != null) {
+		if (submitBtn.current !== null) {
 			(submitBtn.current as HTMLInputElement).disabled = true;
 		}
 
-		await serverFormSubmit(formData);
+		const info = await serverFormSubmit(formData);
 
-		if (submitBtn.current != null) {
+		if (info !== undefined && info.status === "error") {
+			alert(`Error: ${info.reason}`);
+		}
+
+		if (submitBtn.current !== null) {
 			(submitBtn.current as HTMLInputElement).disabled = false;
 		}
 	}

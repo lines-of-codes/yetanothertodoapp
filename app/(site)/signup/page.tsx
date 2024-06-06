@@ -14,8 +14,8 @@ export default function Login() {
 
 		const result = await serverFormSubmit(formData);
 
-		if (result instanceof Object && result.status === "error") {
-			alert(result.reason);
+		if (result !== undefined && result.status === "error") {
+			alert(`Error: ${result.reason}`);
 		}
 
 		if (submitBtn.current != null) {
@@ -53,7 +53,10 @@ export default function Login() {
 				/>
 				<p>
 					Already have an account?{" "}
-					<Link className="" href="/signin">
+					<Link
+						className="underline hover:text-blue-300 transition-colors"
+						href="/signin"
+					>
 						Sign in here.
 					</Link>
 				</p>
